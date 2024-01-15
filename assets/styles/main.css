@@ -1,0 +1,39 @@
+/*HEADER  */
+.header__menu {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav__item {
+	display: flex;
+	gap: 20px;
+}
+
+/* MAIN */
+.main {
+	text-align: center;
+}
+.main__container {
+	height: 100vh;
+}
+.home {
+	height: 100%;
+	display: flex;
+}
+.home__name {
+	display: flex;
+	align-items: center;
+}
+.home__steak {
+	display: flex;
+	align-items: center;
+}
+.nav__long {
+	display: none;
+}
+.column {
+	position: absolute;
+	display: block;
+}
+/* FOOTER */
