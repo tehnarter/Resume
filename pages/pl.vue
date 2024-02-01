@@ -25,20 +25,20 @@ const headerMenuLisPl = [
 	<div class="wrapper">
 		<Header
 			logo="CV"
-			@changeComponent="changeComponent"
 			:menu="headerMenuLisPl"
+			@changeComponent="changeComponent"
 		/>
 		<main class="main">
-			<div class="main__container">
-				<Home
-					v-if="activeComponent === 'Home'"
-					title="Witam, nazywam się Igor. Jestem programistą Front-end"
-					steak="HTML5 SCSS JAVA SCRIPT VUE3 NUXT3 GIT WORDPRRES STRAPI NGINX GULP VITE
-			GSAP LINUX PHP"
-				/>
-				<Portfolio v-if="activeComponent === 'Portfolio'" />
-				<AboutMe v-if="activeComponent === 'About Me'" />
-			</div>
+			<Transition name="anime" mode="out-in">
+				<div class="main__container" :key="activeComponent">
+					<Home
+						v-if="activeComponent === 'Home'"
+						title="Witam, nazywam się Igor. Jestem programistą Front-end"
+					/>
+					<Portfolio v-if="activeComponent === 'Portfolio'" />
+					<AboutMe v-if="activeComponent === 'About Me'" />
+				</div>
+			</Transition>
 		</main>
 		<Footer fTittle="Portfolio ™ & © 2024" polisy="Polityka prywatności" />
 	</div>

@@ -44,11 +44,23 @@ const onSlideChange = swiper => {
 	<section class="portfolio">
 		<Swiper
 			class="my-swiper"
-			:modules="[SwiperAutoplay, SwiperPagination, SwiperNavigation]"
+			:modules="[
+				SwiperAutoplay,
+				SwiperPagination,
+				SwiperNavigation,
+				SwiperEffectCube,
+			]"
 			:slides-per-view="1"
 			:loop="true"
-			:autoplay="{ delay: 3000, disableOnInteraction: true }"
+			:autoplay="{ delay: 5000, disableOnInteraction: true }"
 			:pagination="{ clickable: true }"
+			effect="cube"
+			:cubeEffect="{
+				shadow: true,
+				shadowOffset: 20,
+				shadowScale: 0.8,
+				slideShadows: true,
+			}"
 			navigation
 			@slideChange="onSlideChange"
 		>

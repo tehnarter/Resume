@@ -1,10 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 const isClicked = ref(false)
 const toggleClass = () => {
 	isClicked.value = !isClicked.value
 }
+
 const emit = defineEmits()
+const isClickedModal = ref(false)
+const toggleModal = () => {
+	isClickedModal.value = true
+}
 
 const toggleComponent = name => {
 	isClicked.value = false
@@ -24,6 +29,9 @@ const defaultMenu = [
 		],
 	},
 ]
+const isContacts = index => {
+	return index === 3
+}
 defineProps({
 	logo: String,
 	menu: Array,
@@ -38,14 +46,26 @@ defineProps({
 				<nav class="nav">
 					<ul class="nav__item">
 						<li
-							v-for="nav in menu || defaultMenu"
+							v-for="(nav, index) in menu || defaultMenu"
 							:key="nav.name"
 							class="nav__link"
 						>
-							<div v-if="!nav.dropdown" @click="toggleComponent(nav.name)">
+							<div
+								class="nav__link-item"
+								v-if="!nav.dropdown !== isContacts(index)"
+								@click="toggleComponent(nav.name)"
+							>
 								{{ nav.name }}
 							</div>
-							<div v-else @click="toggleClass">
+
+							<div
+								class="nav__link-item"
+								v-else-if="!nav.dropdown && isContacts(index)"
+								@click="toggleModal"
+							>
+								{{ nav.name }}
+							</div>
+							<div class="nav__link-item" v-else @click="toggleClass">
 								{{ nav.name }}
 								<ul
 									:class="{ column: isClicked }"
@@ -64,6 +84,12 @@ defineProps({
 					</ul>
 				</nav>
 			</div>
+			<Contacts class="contacts" :class="{ modal: isClickedModal }" />
 		</div>
 	</header>
 </template>
+<style>
+/* .modal {
+	display: none;
+} */
+</style>

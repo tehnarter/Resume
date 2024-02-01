@@ -11,6 +11,7 @@ export default defineNuxtConfig({
 		//----------------------
 		prefix: 'Swiper',
 		styleLang: 'css',
-		modules: ['autoplay', 'navigation', 'pagination'],
+
+		modules: ['autoplay', 'navigation', 'pagination', 'effect-cube'],
 	},
 })

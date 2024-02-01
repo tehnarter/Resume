@@ -1,4 +1,7 @@
 /*HEADER  */
+.header {
+	margin-bottom: 30px;
+}
 .header__menu {
 	margin-top: 20px;
 	display: flex;
@@ -8,6 +11,14 @@
 .nav__item {
 	display: flex;
 	gap: 20px;
+}
+.nav__link-item {
+	transition: box-shadow 0.3s ease-in-out;
+	cursor: pointer;
+	transition: box-shadow 0.3s ease-in-out;
+}
+.nav__link-item:hover {
+	box-shadow: 0 0 15px rgba(238, 233, 233, 0.5);
 }
 
 /* MAIN */
