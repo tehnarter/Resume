@@ -26,7 +26,12 @@ body {
 	line-height: 1;
 	font-family: $fontFamily;
 	font-size: $fontSize;
-	background-color: rgb(2, 2, 24);
+	background: linear-gradient(
+		to right,
+		rgba(2, 2, 24, 1) 0%,
+		rgba(2, 2, 24, 0.98) 7%,
+		rgba(67, 98, 133, 0.75) 100%
+	);
 	//text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;

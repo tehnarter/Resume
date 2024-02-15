@@ -4,7 +4,7 @@
 
 export default defineNuxtConfig({
 	devtools: { enabled: false },
-	css: ['~/assets/styles/style.scss', '~/assets/styles/main.css'],
+	css: ['~/assets/styles/style.scss'],
 	modules: ['nuxt-swiper'],
 	swiper: {
 		// Swiper options

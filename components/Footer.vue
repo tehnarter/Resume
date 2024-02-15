@@ -7,11 +7,11 @@ defineProps({
 
 <template>
 	<footer class="footer">
-		<div class="footer__container">
-			<div>
+		<div class="footer__container footer-row">
+			<div class="footer__title">
 				{{ fTittle }}
 			</div>
-			<div>{{ polisy }}</div>
+			<div class="footer__polisy">{{ polisy }}</div>
 		</div>
 	</footer>
 </template>

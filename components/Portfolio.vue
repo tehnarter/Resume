@@ -4,31 +4,37 @@ const slides = [
 	{
 		id: 1,
 		imageSrc: '/food.jpg',
-		description: 'HTML',
+		description: 'VUE3  SCSS G-SAP VITE',
 		path: 'https://google.com',
 	},
 	{
 		id: 2,
 		imageSrc: '/travel.jpg',
-		description: 'SCSS 2',
+		description: 'GULP SCSS JS ',
 		path: 'https://google.com',
 	},
 	{
 		id: 3,
-		imageSrc: '/car.jpg',
-		description: 'NUXT 3',
+		imageSrc: '/polar.jpg',
+		description: 'GULP SCSS JS WORDPRESS PHP',
 		path: 'https://google.com',
 	},
 	{
 		id: 4,
-		imageSrc: '/rest.jpg',
-		description: 'VUE 3',
+		imageSrc: '/car.jpg',
+		description: 'HTML CSS',
 		path: 'https://google.com',
 	},
 	{
 		id: 5,
+		imageSrc: '/rest.jpg',
+		description: 'HTML CSS',
+		path: 'https://google.com',
+	},
+	{
+		id: 6,
 		imageSrc: '/cafe.jpg',
-		description: 'VITE',
+		description: 'HTML CSS ',
 		path: 'https://google.com',
 	},
 ]
@@ -114,6 +120,7 @@ const onSlideChange = swiper => {
 .slide-description {
 	margin-top: 30px;
 	text-align: center;
-	color: #fff;
+	font-family: LatoBold;
+	color: #8b8c8d;
 }
 </style>

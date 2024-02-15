@@ -1,16 +1,19 @@
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 const isClicked = ref(false)
 const toggleClass = () => {
 	isClicked.value = !isClicked.value
 }
-
-const emit = defineEmits()
 const isClickedModal = ref(false)
 const toggleModal = () => {
 	isClickedModal.value = true
 }
+// Додаємо клас при кліку в батьківському компоненті
 
+const removeClass = () => {
+	isClickedModal.value = false
+}
+const emit = defineEmits()
 const toggleComponent = name => {
 	isClicked.value = false
 	emit('changeComponent', name)
@@ -35,6 +38,11 @@ const isContacts = index => {
 defineProps({
 	logo: String,
 	menu: Array,
+	send: String,
+	emailPlaceholder: String,
+	namePlaceholder: String,
+	messagePlaceholder: String,
+	statusSend: String,
 })
 </script>
 
@@ -42,7 +50,8 @@ defineProps({
 	<header class="header">
 		<div class="header__container">
 			<div class="header__menu">
-				<div class="logo">{{ logo }}</div>
+				<img class="logo" :src="logo" alt="logo" />
+
 				<nav class="nav">
 					<ul class="nav__item">
 						<li
@@ -84,7 +93,15 @@ defineProps({
 					</ul>
 				</nav>
 			</div>
-			<Contacts class="contacts" :class="{ modal: isClickedModal }" />
+			<Contacts
+				:class="{ modal: isClickedModal }"
+				@closeModalClick="removeClass"
+				:send="send"
+				:emailPlaceholder="emailPlaceholder"
+				:namePlaceholder="namePlaceholder"
+				:messagePlaceholder="messagePlaceholder"
+				:statusSend="statusSend"
+			/>
 		</div>
 	</header>
 </template>

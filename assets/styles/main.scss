@@ -1,0 +1,151 @@
+/*HEADER  */
+.header {
+	margin-bottom: 30px;
+}
+.header__menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	cursor: pointer;
+}
+.nav__item {
+	display: flex;
+	gap: 20px;
+}
+.nav__link {
+}
+.nav__link-item {
+	font-family: SeymourOne;
+	font-size: 14px;
+	transition: all 0.5s ease-in;
+	cursor: pointer;
+	&:hover {
+		color: rgba(206, 206, 248, 0.7);
+	}
+}
+.nav__long li:hover {
+	color: #fff;
+}
+
+/* MAIN */
+
+.main {
+	text-align: center;
+}
+.main__container {
+	height: 100vh;
+}
+.home {
+	height: 100%;
+	display: flex;
+	column-gap: 50px;
+}
+.home__name {
+	padding: 0px 10px 0px 10px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	flex: 0 1 50%;
+	align-items: center;
+	justify-content: center;
+}
+.home__title {
+	font-family: BlackOpsOne;
+	font-size: 45px;
+	color: rgba(164, 167, 165, 0.856);
+}
+.home__text {
+	padding: 0px 10px 0px 10px;
+	font-size: 20px;
+	font-family: Shantell;
+	line-height: 25px;
+	text-align: start;
+}
+.home__steak {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 1 50%;
+	gap: 50px;
+	font-size: 20px;
+	align-content: center;
+}
+.home__steak img {
+	align-self: center;
+	width: 40px;
+}
+.nav__long {
+	display: none;
+}
+.column {
+	position: absolute;
+	display: block;
+}
+
+.about {
+	margin: 0px 30px 0px 30px;
+	padding: 5px;
+	background-color: #f3f3f3;
+	border: solid 10px rgb(202, 203, 205);
+	border-radius: 35px;
+	height: 85vh;
+
+	&__border {
+		height: 100%;
+		border-radius: 20px;
+		padding: 50px 20px 30px 20px;
+		background-color: rgb(202, 203, 205);
+	}
+	&__message {
+		padding: 10px 30px;
+		height: 100%;
+		background-color: #c3dbf7;
+		border-radius: 10px;
+		overflow: auto;
+	}
+}
+.message {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	font-family: LatoBold;
+	font-size: 18px;
+	color: rgba(16, 17, 17, 0.815);
+	line-height: 20px;
+
+	&__you {
+		max-width: 70%;
+		display: flex;
+		flex-direction: column;
+		padding: 5px 10px;
+		align-items: flex-start;
+		align-self: flex-start;
+		border-radius: 10px;
+		background-color: #bcbdc1;
+	}
+	&__me {
+		max-width: 70%;
+		display: flex;
+		flex-direction: column;
+		padding: 5px 10px;
+		border-radius: 10px;
+		background-color: #728aa4;
+		align-items: flex-end;
+		align-self: flex-end;
+	}
+}
+
+/* FOOTER */
+
+.footer-row {
+	padding: 20px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.footer__polisy {
+	cursor: pointer;
+	&:hover {
+		border-bottom: solid 1px;
+	}
+}
