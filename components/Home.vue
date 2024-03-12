@@ -2,6 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import gsap from 'gsap'
 const isMounted = ref(false)
+const isLoaded = ref(false)
 
 defineProps({
 	title: String,
@@ -9,7 +10,8 @@ defineProps({
 })
 
 const animateIn = () => {
-	gsap.fromTo('.home__name', { x: -2000 }, { duration: 3, x: 0 })
+	gsap.fromTo('.home__title', { opacity: 0 }, { duration: 5, x: 0, opacity: 1 })
+	gsap.fromTo('.home__text', { y: -2000 }, { duration: 3, y: 0, opacity: 1 })
 	gsap.fromTo(
 		'.home__steak img',
 		{ x: 2000 },
@@ -27,6 +29,7 @@ onMounted(() => {
 
 	// Позначте, що компонент вже відображено
 	isMounted.value = true
+	isLoaded.value = true
 })
 
 onBeforeUnmount(() => {
@@ -38,7 +41,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-	<section class="home">
+	<section class="home" :class="{ loaded: isLoaded }">
 		<div class="home__name">
 			<h1 class="home__title">
 				{{ title }}
@@ -66,3 +69,4 @@ onBeforeUnmount(() => {
 		</div>
 	</section>
 </template>
+<style lang="scss" scoped></style>

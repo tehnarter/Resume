@@ -8,10 +8,16 @@ export default defineNuxtConfig({
 	modules: ['nuxt-swiper'],
 	swiper: {
 		// Swiper options
-		//----------------------
+		//--------------------
 		prefix: 'Swiper',
 		styleLang: 'css',
 
-		modules: ['autoplay', 'navigation', 'pagination', 'effect-cube'],
+		modules: [
+			'autoplay',
+			'navigation',
+			'pagination',
+			'effect-fade',
+			'parallax',
+		],
 	},
 })

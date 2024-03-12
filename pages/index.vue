@@ -1,39 +1,56 @@
 <script setup>
 import { ref } from 'vue'
-const activeComponent = ref('Home')
+const activeComponent = ref('Головна')
 const changeComponent = component => {
 	activeComponent.value = component
+}
+const statusSendUa = {
+	ok: 'Надісланно!',
+	error: 'Уупс!',
+	field: ' Будь ласка, заповніть всі поля',
 }
 </script>
 
 <template>
 	<div class="wrapper">
 		<Header
-			logo="/resume.svg"
-			send="SEND"
-			emailPlaceholder="Email"
-			namePlaceholder="Name"
-			messagePlaceholder="Message"
-			statusSend="Send!"
+			logo="/cv.svg"
 			@changeComponent="changeComponent"
+			send="НАДІСЛАТИ"
+			emailPlaceholder="Емейл"
+			namePlaceholder="Ім'я"
+			messagePlaceholder="Повідомлення"
+			:statusSend="statusSendUa"
 		/>
 		<main class="main">
 			<Transition name="anime" mode="out-in">
 				<div class="main__container" :key="activeComponent">
 					<Home
-						v-if="activeComponent === 'Home'"
+						v-if="activeComponent === 'Головна'"
 						title="Front-end Developer"
-						text="Hello, my name is Igor. I'm  Front-end VUE developer who is eager to grow in the field of web technologies. Currently, I am seeking an opportunity to start my career in the IT industry and gain practical experience in real projects. I am excited about the opportunity to join your team and contribute to your projects!"
+						text="Привіт, мене звати Ігор. Я Front-end VUE розробник, що прагне розвиватися у сфері веб-технологій. Зараз я шукаю можливість почати свою кар'єру в IT-галузі та набути практичного досвіду у реальних проектах.З нетерпінням чекаю можливості приєднатися до вашої команди та внести свій внесок у ваші проекти!"
 					/>
-					<Portfolio v-if="activeComponent === 'Portfolio'" />
+					<Portfolio v-if="activeComponent === 'Проекти'" />
 					<AboutMe
-						v-if="activeComponent === 'About Me'"
-						text="I am a beginner in the field of frontend development with a deep interest in web technologies and a desire to learn new things. My skills include working with HTML, CSS, and JavaScript. Currently, I am actively studying Vue.js 3 and Nuxt.js 3, and I am also interested in backend opportunities such as Strapi, PHP, and Nginx. Although my knowledge in these areas is currently superficial, I am ready to improve them by working on projects and learning through practice. Additionally, I have experience using build tools like Gulp and Vite for automating routine tasks in web development. I also utilize libraries such as GSAP to create animations and enhance the user experience. I have a basic understanding of how websites work and a desire to grow in this field. I am highly motivated and a fast learner, willing to invest time and effort to achieve my goals in frontend development."
+						v-if="activeComponent === 'Про Мене'"
+						text="Я початківець у сфері фронтенд розробки з глибоким інтересом до
+				веб-технологій і бажанням вивчати нові речі. Мої навички включають
+				роботу з HTML, CSS і JavaScript, Зараз я активно вивчаю Vue.js 3 та
+				Nuxt.js 3, а також цікавлюсь можливостями бекенду, такими як Strapi, PHP
+				та Nginx. Хоча мої знання в цих областях поки що поверхневі, я готовий
+				вдосконалювати їх, працюючи над проектами та навчаючись на практиці.
+				Крім того, я маю досвід у використанні збірників, таких як Gulp та Vite,
+				для автоматизації рутинних завдань у веб-розробці. Також я використовую
+				бібліотеки, такі як GSAP, для створення анімацій та покращення
+				користувацького досвіду.Маю базове розуміння принципів роботи веб-сайтів
+				та бажання розвиватися в цій галузі. Я дуже мотивований та швидко
+				навчаюсь, готовий вкладати час і зусилля для досягнення своїх цілей у
+				фронтенд розробці."
 					/>
 				</div>
 			</Transition>
 		</main>
-		<Footer fTittle="Portfolio ™ & © 2024" polisy="Privacy policy" />
+		<Footer fTittle="Портфоліо ™ & © 2024" polisy="Політика приватності" />
 	</div>
 </template>
 <style>

@@ -4,23 +4,27 @@ const activeComponent = ref('Home')
 const changeComponent = component => {
 	activeComponent.value = component
 }
-
-const headerMenuLisPl = [
+const statusSendEn = {
+	ok: 'Send!',
+	error: 'Oops!',
+	field: ' Please fill in all fields',
+}
+const headerMenuListEN = [
 	{ name: 'Home' },
 	{ name: 'Portfolio' },
 
 	{ name: 'About Me' },
 	{ name: 'Contacts' },
 	{
-		name: 'PL',
+		name: 'EN',
 		dropdown: [
 			{ name: 'UA', path: '/' },
-			{ name: 'EN', path: '/en' },
+			{ name: 'PL', path: '/pl' },
 		],
 	},
 ]
-const messagePl = [
-	{ title: 'You', content: 'Приві' },
+const messageEn = [
+	{ title: 'You', content: 'Hello' },
 	{
 		title: 'Me',
 		content: `Я початківець `,
@@ -35,24 +39,19 @@ const messagePl = [
 	{ title: 'You', content: 'Ok' },
 	{ title: 'You', content: 'Ok' },
 ]
-const statusSendPl = {
-	ok: 'Wysłano!',
-	error: 'Oops!',
-	field: ' Proszę wypełnić wszystkie pola',
-}
 </script>
 
 <template>
 	<div class="wrapper">
 		<Header
-			logo="/cv.svg"
-			:menu="headerMenuLisPl"
-			send="WYŚLIJ"
-			emailPlaceholder="E-mail"
-			namePlaceholder="Imię"
-			messagePlaceholder="Wiadomość"
+			:menu="headerMenuListEN"
+			logo="/resume.svg"
+			send="SEND"
+			emailPlaceholder="Email"
+			namePlaceholder="Name"
+			messagePlaceholder="Message"
+			:statusSend="statusSendEn"
 			@changeComponent="changeComponent"
-			:statusSend="statusSendPl"
 		/>
 		<main class="main">
 			<Transition name="anime" mode="out-in">
@@ -60,14 +59,14 @@ const statusSendPl = {
 					<Home
 						v-if="activeComponent === 'Home'"
 						title="Front-end Developer"
-						text="Witam, nazywam się Igor. Jestem programistą Front-end VUE, który pragnie rozwijać się w dziedzinie technologii internetowych. W tej chwili szukam okazji do rozpoczęcia mojej kariery w branży IT i zdobycia praktycznego doświadczenia w rzeczywistych projektach. Nie mogę się doczekać możliwości dołączenia do waszego zespołu i wniesienia wkładu w wasze projekty!"
+						text="Hello, my name is Igor. I'm  Front-end VUE developer who is eager to grow in the field of web technologies. Currently, I am seeking an opportunity to start my career in the IT industry and gain practical experience in real projects. I am excited about the opportunity to join your team and contribute to your projects!"
 					/>
 					<Portfolio v-if="activeComponent === 'Portfolio'" />
-					<AboutMe v-if="activeComponent === 'About Me'" :message="messagePl" />
+					<AboutMe v-if="activeComponent === 'About Me'" :message="messageEn" />
 				</div>
 			</Transition>
 		</main>
-		<Footer fTittle="Portfolio ™ & © 2024" polisy="Polityka prywatności" />
+		<Footer fTittle="Portfolio ™ & © 2024" polisy="Privacy policy" />
 	</div>
 </template>
-<style scoped></style>
+<style></style>

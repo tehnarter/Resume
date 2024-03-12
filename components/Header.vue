@@ -19,15 +19,15 @@ const toggleComponent = name => {
 	emit('changeComponent', name)
 }
 const defaultMenu = [
-	{ name: 'Home' },
-	{ name: 'Portfolio' },
+	{ name: 'Головна' },
+	{ name: 'Проекти' },
 
-	{ name: 'About Me' },
-	{ name: 'Contacts' },
+	{ name: 'Про Мене' },
+	{ name: 'Контакти' },
 	{
-		name: 'EN',
+		name: 'UA',
 		dropdown: [
-			{ name: 'UA', path: '/ua' },
+			{ name: 'EN', path: '/en' },
 			{ name: 'PL', path: '/pl' },
 		],
 	},
@@ -42,17 +42,31 @@ defineProps({
 	emailPlaceholder: String,
 	namePlaceholder: String,
 	messagePlaceholder: String,
-	statusSend: String,
+	statusSend: Object,
 })
+const isClickedBurger = ref(false)
+const activeBurger = () => {
+	isClickedBurger.value = !isClickedBurger.value
+}
+const closeBurger = () => {
+	isClickedBurger.value = false
+}
 </script>
 
 <template>
 	<header class="header">
 		<div class="header__container">
 			<div class="header__menu">
-				<img class="logo" :src="logo" alt="logo" />
+				<div class="logo">
+					<img :src="logo" alt="logo" />
+				</div>
+				<Burger :class="{ active: isClickedBurger }" @click="activeBurger" />
 
-				<nav class="nav">
+				<nav
+					class="nav"
+					:class="{ active: isClickedBurger }"
+					@click="closeBurger"
+				>
 					<ul class="nav__item">
 						<li
 							v-for="(nav, index) in menu || defaultMenu"
@@ -74,24 +88,34 @@ defineProps({
 							>
 								{{ nav.name }}
 							</div>
-							<div class="nav__link-item" v-else @click="toggleClass">
-								{{ nav.name }}
-								<ul
-									:class="{ column: isClicked }"
-									@click="toggleClass"
-									v-if="nav.dropdown"
-									class="nav__long"
-								>
-									<li v-for="dd in nav.dropdown" :key="dd.name">
-										<NuxtLink :to="dd.path">
-											{{ dd.name }}
-										</NuxtLink>
-									</li>
-								</ul>
-							</div>
 						</li>
 					</ul>
 				</nav>
+				<div
+					v-for="(nav, index) in menu || defaultMenu"
+					:key="nav.name"
+					class="long"
+				>
+					<div
+						class="long__link"
+						@click="toggleClass"
+						v-if="index === (menu || defaultMenu).length - 1"
+					>
+						{{ nav.name }}
+						<ul
+							:class="{ column: isClicked }"
+							@click="toggleClass"
+							v-if="nav.dropdown"
+							class="long__item"
+						>
+							<li v-for="dd in nav.dropdown" :key="dd.name">
+								<NuxtLink :to="dd.path">
+									{{ dd.name }}
+								</NuxtLink>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<Contacts
 				:class="{ modal: isClickedModal }"

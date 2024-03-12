@@ -125,3 +125,26 @@
 		}
 	}
 }
+// Адаптив по брекпоінтах
+@mixin adaptiveMax($size) {
+	@if map-has-key($breakpoints-max, $size) {
+		@media (max-width:#{map-get($breakpoints-max,$size)}px) {
+			@content;
+		}
+	} @else {
+		@media (max-width:#{$size}) {
+			@content;
+		}
+	}
+}
+@mixin adaptiveMin($size) {
+	@if map-has-key($breakpoints-min, $size) {
+		@media (min-width:#{map-get($breakpoints-min,$size)}px) {
+			@content;
+		}
+	} @else {
+		@media (min-width:#{$size}) {
+			@content;
+		}
+	}
+}

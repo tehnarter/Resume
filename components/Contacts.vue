@@ -11,17 +11,27 @@ const formData = ref({
 	email: '',
 	message: '',
 })
-const statusSend = 'statusSend'
+
 defineProps({
 	send: String,
 	emailPlaceholder: String,
 	namePlaceholder: String,
 	messagePlaceholder: String,
-	statusSend: String,
+	statusSend: Object,
 })
 const status = ref('')
+const isFormSubmitted = ref(false)
 
-const handleSubmit = async () => {
+const handleSubmit = async statusSend => {
+	if (isFormSubmitted.value) return
+	if (
+		!formData.value.name ||
+		!formData.value.email ||
+		!formData.value.message
+	) {
+		status.value = statusSend.field
+		return
+	}
 	try {
 		const response = await fetch('https://formspree.io/f/xleqjpvo', {
 			method: 'POST',
@@ -31,7 +41,7 @@ const handleSubmit = async () => {
 			body: JSON.stringify(formData.value),
 		})
 		if (response.ok) {
-			status.value = statusSend
+			status.value = statusSend.ok
 			formData.value.name = ''
 			formData.value.email = ''
 			formData.value.message = ''
@@ -39,16 +49,17 @@ const handleSubmit = async () => {
 			setTimeout(() => {
 				status.value = ''
 			}, 3000)
+			isFormSubmitted.value = true
 		} else {
 			const data = await response.json()
 			if (data.errors) {
 				status.value = data.errors.map(error => error.message).join(', ')
 			} else {
-				status.value = 'Oops! '
+				status.value = statusSend.error
 			}
 		}
 	} catch (error) {
-		status.value = 'Oops! '
+		status.value = statusSend.error
 	}
 }
 </script>
@@ -120,13 +131,21 @@ const handleSubmit = async () => {
 						required
 					></textarea>
 					<p class="contacts__status" v-if="status">{{ status }}</p>
-					<button class="contacts__send" type="submit">{{ send }}</button>
+					<button
+						class="contacts__send"
+						type="button"
+						@click="handleSubmit(statusSend)"
+						:disabled="isFormSubmitted"
+					>
+						{{ send }}
+					</button>
 				</form>
 			</div>
 		</div>
 	</section>
 </template>
 <style scoped lang="scss">
+@import '../assets/styles/style';
 .contacts {
 	display: none;
 	position: fixed;
@@ -143,8 +162,8 @@ const handleSubmit = async () => {
 	&__modal {
 		margin: 70px auto;
 		padding-bottom: 50px;
-		width: 40%;
-
+		// width: 40%;
+		@include adaptiveValue('width', 500, 350);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -214,14 +233,23 @@ const handleSubmit = async () => {
 	}
 	&__name {
 		border-radius: 2px;
+		&:focus {
+			box-shadow: 0px 0px 5px 1px #ffffff;
+		}
 	}
 
 	&__email {
 		border-radius: 2px;
+		&:focus {
+			box-shadow: 0px 0px 5px 1px #ffffff;
+		}
 	}
 	&__text {
 		border-radius: 2px;
 		height: 100px;
+		&:focus {
+			box-shadow: 0px 0px 5px 1px #ffffff;
+		}
 	}
 
 	&__send {
@@ -230,6 +258,13 @@ const handleSubmit = async () => {
 		font-family: LatoBold;
 		background-color: rgb(238, 110, 110);
 		align-self: center;
+		&:hover:not(:disabled) {
+			box-shadow: 0px 0px 5px 1px #ffffff;
+		}
+		&:disabled {
+			opacity: 0.5;
+			cursor: default;
+		}
 	}
 	&__status {
 		align-self: center;
