@@ -1,0 +1,52 @@
+{
+	"menu": [
+		{ "name": "Główna" },
+		{ "name": "Projekty" },
+
+		{ "name": "O mnie" },
+		{ "name": "Kontakt" },
+		{
+			"name": "PL",
+			"dropdown": [
+				{ "name": "UA", "path": "/" },
+				{ "name": "EN", "path": "/en" }
+			]
+		}
+	],
+
+	"home-title": "Front-end Developer",
+	"home-text": "Witam, nazywam się Igor. Jestem programistą Front-end VUE, który pragnie rozwijać się w dziedzinie technologii internetowych. W tej chwili szukam okazji do rozpoczęcia mojej kariery w branży IT i zdobycia praktycznego doświadczenia w rzeczywistych projektach. Nie mogę się doczekać możliwości dołączenia do waszego zespołu i wniesienia wkładu w wasze projekty!",
+	"messages": [
+		{ "title": "Ja", "content": "Cześć. Powiedz coś o sobie." },
+		{
+			"title": "Igor",
+			"content": "Dzień dobry. Jestem początkującym w rozwoju front-endu z głębokim zainteresowaniem technologiami webowymi i chęcią nauki nowych rzeczy. Moje umiejętności obejmują pracę z HTML, CSS i JavaScript. Obecnie aktywnie uczę się Vue.js 3 i Nuxt.js 3, oraz interesuję się możliwościami backendu, takimi jak Strapi, PHP i Nginx. Choć moja wiedza w tych obszarach jest jeszcze powierzchowna, jestem gotów ją ulepszyć, pracując nad projektami i ucząc się poprzez praktykę. Dodatkowo, mam doświadczenie w korzystaniu z narzędzi do budowania, takich jak Gulp i Vite, do automatyzacji rutynowych zadań w tworzeniu stron internetowych"
+		},
+		{ "title": "Ja", "content": "Co jeszcze cię interesuje?" },
+		{
+			"title": "Igor",
+			"content": "Także używam bibliotek takich jak GSAP do tworzenia animacji i poprawy doświadczenia użytkownika. Mam podstawowe zrozumienie zasad działania stron internetowych i chęć rozwijania się w tej dziedzinie. Jestem bardzo zmotywowany i szybko się uczę, gotów poświęcić czas i wysiłek na osiągnięcie moich celów w rozwoju front-endu."
+		},
+		{ "title": "Ja", "content": "Gdzie można zobaczyć twoje prace?" },
+		{
+			"title": "Igor",
+			"content": "Możesz zobaczyć moje prace na tej stronie w sekcji Projekty, a także na GitHub."
+		},
+		{ "title": "Ja", "content": "Dziękuję." },
+		{
+			"title": "Igor",
+			"content": "Proszę, miłego dnia!"
+		}
+	],
+	"contacts": {
+		"name": "Imię",
+		"email": "E-mail",
+		"text": "Wiadomość",
+		"send": "WYŚLIJ",
+		"ok": "Wysłano!",
+		"error": "Oops!",
+		"field": "Proszę wypełnić wszystkie pola"
+	},
+	"footer-title": "Portfolio ™ & © 2024",
+	"footer-polisy": "Polityka prywatności"
+}

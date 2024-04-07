@@ -18,30 +18,31 @@ const toggleComponent = name => {
 	isClicked.value = false
 	emit('changeComponent', name)
 }
-const defaultMenu = [
-	{ name: 'Головна' },
-	{ name: 'Проекти' },
-
-	{ name: 'Про Мене' },
-	{ name: 'Контакти' },
+const { t: translate } = useI18n()
+const menu = [
+	{ name: translate("menu[0]['name']") },
+	{ name: translate("menu[1]['name']") },
+	{ name: translate("menu[2]['name']") },
+	{ name: translate("menu[3]['name']") },
 	{
-		name: 'UA',
+		name: translate("menu[4]['name']"),
 		dropdown: [
-			{ name: 'EN', path: '/en' },
-			{ name: 'PL', path: '/pl' },
+			{
+				name: translate("menu[4]['dropdown'][0]['name']"),
+				path: translate("menu[4]['dropdown'][0]['path']"),
+			},
+			{
+				name: translate("menu[4]['dropdown'][1]['name']"),
+				path: translate("menu[4]['dropdown'][1]['path']"),
+			},
 		],
 	},
 ]
+
 const isContacts = index => {
 	return index === 3
 }
 defineProps({
-	logo: String,
-	menu: Array,
-	send: String,
-	emailPlaceholder: String,
-	namePlaceholder: String,
-	messagePlaceholder: String,
 	statusSend: Object,
 })
 const isClickedBurger = ref(false)
@@ -58,7 +59,7 @@ const closeBurger = () => {
 		<div class="header__container">
 			<div class="header__menu">
 				<div class="logo">
-					<img :src="logo" alt="logo" />
+					<img src="/resume.svg" alt="logo" />
 				</div>
 				<Burger :class="{ active: isClickedBurger }" @click="activeBurger" />
 
@@ -68,11 +69,7 @@ const closeBurger = () => {
 					@click="closeBurger"
 				>
 					<ul class="nav__item">
-						<li
-							v-for="(nav, index) in menu || defaultMenu"
-							:key="nav.name"
-							class="nav__link"
-						>
+						<li v-for="(nav, index) in menu" :key="nav.name" class="nav__link">
 							<div
 								class="nav__link-item"
 								v-if="!nav.dropdown !== isContacts(index)"
@@ -91,15 +88,11 @@ const closeBurger = () => {
 						</li>
 					</ul>
 				</nav>
-				<div
-					v-for="(nav, index) in menu || defaultMenu"
-					:key="nav.name"
-					class="long"
-				>
+				<div v-for="(nav, index) in menu" :key="nav.name" class="long">
 					<div
 						class="long__link"
 						@click="toggleClass"
-						v-if="index === (menu || defaultMenu).length - 1"
+						v-if="index === menu.length - 1"
 					>
 						{{ nav.name }}
 						<ul
@@ -120,10 +113,6 @@ const closeBurger = () => {
 			<Contacts
 				:class="{ modal: isClickedModal }"
 				@closeModalClick="removeClass"
-				:send="send"
-				:emailPlaceholder="emailPlaceholder"
-				:namePlaceholder="namePlaceholder"
-				:messagePlaceholder="messagePlaceholder"
 				:statusSend="statusSend"
 			/>
 		</div>

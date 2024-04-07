@@ -182,7 +182,6 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
-	font-family: LatoBold;
 	font-size: 18px;
 	color: rgba(16, 17, 17, 0.815);
 	line-height: 20px;
@@ -198,6 +197,9 @@
 		background-color: #bcbdc1;
 		animation: fadeIn 1s ease forwards;
 		opacity: 0;
+		@include adaptiveMax(xs) {
+			max-width: 85%;
+		}
 	}
 	&__me {
 		max-width: 70%;
@@ -210,6 +212,9 @@
 		align-self: flex-end;
 		animation: fadeIn 1s ease forwards;
 		opacity: 0;
+		@include adaptiveMax(xs) {
+			max-width: 85%;
+		}
 		& > p {
 			text-align: justify;
 		}

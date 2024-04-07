@@ -1,0 +1,52 @@
+{
+	"menu": [
+		{ "name": "Home" },
+		{ "name": "Portfolio" },
+
+		{ "name": "About Me" },
+		{ "name": "Contacts" },
+		{
+			"name": "EN",
+			"dropdown": [
+				{ "name": "UA", "path": "/" },
+				{ "name": "PL", "path": "/pl" }
+			]
+		}
+	],
+
+	"home-title": "Front-end Developer",
+	"home-text": "Hello, my name is Igor. I'm  Front-end VUE developer who is eager to grow in the field of web technologies. Currently, I am seeking an opportunity to start my career in the IT industry and gain practical experience in real projects. I am excited about the opportunity to join your team and contribute to your projects!",
+	"messages": [
+		{ "title": "I", "content": "Hello. Tell me something about yourself." },
+		{
+			"title": "Igor",
+			"content": "Good day. I'm a beginner in frontend development with a deep interest in web technologies and a desire to learn new things. My skills include working with HTML, CSS, and JavaScript. Currently, I'm actively learning Vue.js 3 and Nuxt.js 3, and I'm also interested in backend possibilities such as Strapi, PHP, and Nginx. Although my knowledge in these areas is still superficial, I'm ready to improve them by working on projects and learning through practice. Additionally, I have experience using build tools like Gulp and Vite to automate routine tasks in web development."
+		},
+		{ "title": "I", "content": "What else interests you?" },
+		{
+			"title": "Igor",
+			"content": "I also use libraries such as GSAP for creating animations and enhancing user experience. I have a basic understanding of website workings and a desire to grow in this field. I am highly motivated and a quick learner, ready to invest time and effort to achieve my goals in frontend development."
+		},
+		{ "title": "I", "content": "Where can I view your works?" },
+		{
+			"title": "Igor",
+			"content": "You can view them on this site in the projects section, as well as on GitHub."
+		},
+		{ "title": "I", "content": "Thank you" },
+		{
+			"title": "Igor",
+			"content": "Please, have a nice day!"
+		}
+	],
+	"contacts": {
+		"name": "Name",
+		"email": "Email",
+		"text": "Message",
+		"send": "SEND",
+		"ok": "Send!",
+		"error": "Oops!",
+		"field": "Please fill in all fields"
+	},
+	"footer-title": "Portfolio ™ & © 2024",
+	"footer-polisy": "Privacy policy"
+}

@@ -5,37 +5,38 @@ const slides = [
 		id: 1,
 		imageSrc: '/food.jpg',
 		description: 'VUE3  SCSS G-SAP VITE',
-		path: 'https://google.com',
+		path: 'https://project-1.resume-cv.pp.ua',
 	},
 	{
 		id: 2,
-		imageSrc: '/travel.jpg',
-		description: 'GULP SCSS JS ',
-		path: 'https://google.com',
+		imageSrc: '/polar.jpg',
+		description: 'GULP SCSS JS WORDPRESS PHP',
+		path: 'https://project-2.resume-cv.pp.ua',
 	},
 	{
 		id: 3,
-		imageSrc: '/polar.jpg',
-		description: 'GULP SCSS JS WORDPRESS PHP',
-		path: 'https://google.com',
+		imageSrc: '/travel.jpg',
+		description: 'GULP SCSS JS ',
+		path: 'https://project-3.resume-cv.pp.ua',
 	},
+
 	{
 		id: 4,
 		imageSrc: '/car.jpg',
-		description: 'HTML CSS',
-		path: 'https://google.com',
+		description: 'GULP SCSS JS',
+		path: 'https://project-4.resume-cv.pp.ua',
 	},
 	{
 		id: 5,
-		imageSrc: '/rest.jpg',
-		description: 'HTML CSS',
-		path: 'https://google.com',
+		imageSrc: '/cafe.jpg',
+		description: 'HTML CSS JS ',
+		path: 'https://project-5.resume-cv.pp.ua',
 	},
 	{
 		id: 6,
-		imageSrc: '/cafe.jpg',
-		description: 'HTML CSS ',
-		path: 'https://google.com',
+		imageSrc: '/rest.jpg',
+		description: 'HTML CSS',
+		path: 'https://project-6.resume-cv.pp.ua',
 	},
 ]
 const currentSlideDescription = ref(slides[0].description)
@@ -138,7 +139,8 @@ const onSlideChange = swiper => {
 .slide-description {
 	margin-top: 30px;
 	text-align: center;
-	font-family: LatoBold;
+	font-family: RobotoBoldItalic;
+	font-size: 20px;
 	color: #8b8c8d;
 }
 .custom-swiper-button-prev {

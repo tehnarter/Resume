@@ -3,12 +3,6 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import gsap from 'gsap'
 const isMounted = ref(false)
 const isLoaded = ref(false)
-
-defineProps({
-	title: String,
-	text: String,
-})
-
 const animateIn = () => {
 	gsap.fromTo('.home__title', { opacity: 0 }, { duration: 5, x: 0, opacity: 1 })
 	gsap.fromTo('.home__text', { y: -2000 }, { duration: 3, y: 0, opacity: 1 })
@@ -18,7 +12,6 @@ const animateIn = () => {
 		{ duration: 3, x: 0, stagger: 0.3 }
 	)
 }
-
 const animateOut = () => {
 	gsap.to('.home__name', { duration: 3, x: -2000 })
 	gsap.to('.home__steak img', { duration: 3, x: 2000 })
@@ -44,10 +37,11 @@ onBeforeUnmount(() => {
 	<section class="home" :class="{ loaded: isLoaded }">
 		<div class="home__name">
 			<h1 class="home__title">
-				{{ title }}
+				{{ $t('home-title') }}
 			</h1>
+
 			<p class="home__text">
-				{{ text }}
+				{{ $t('home-text') }}
 			</p>
 		</div>
 		<div class="home__steak">

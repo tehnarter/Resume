@@ -1,43 +1,47 @@
 <script setup>
-const defaulMessage = [
-	{ title: 'You', content: 'Привіт. Розкажи щось про себе' },
+const { t: translate } = useI18n()
+const message = [
 	{
-		title: 'Me',
-		content: `Я початківець у сфері фронтенд розробки з глибоким інтересом до
-						веб-технологій і бажанням вивчати нові речі.Мої навички включають
-						роботу з HTML, CSS і JavaScript, Зараз я активно вивчаю Vue.js 3 та
-						Nuxt.js 3, а також цікавлюсь можливостями бекенду, такими як Strapi,
-						PHP та Nginx. Хоча мої знання в цих областях поки що поверхневі, я
-						готовий вдосконалювати їх, працюючи над проектами та навчаючись на
-						практиці. Крім того, я маю досвід у використанні збірників, таких як
-						Gulp та Vite, для автоматизації рутинних завдань у веб-розробці.`,
+		title: translate("messages[0]['title']"),
+		content: translate("messages[0]['content']"),
 	},
-	{ title: 'You', content: 'Що ще тебе цікавить?' },
 	{
-		title: 'Me',
-		content: `Також я використовую бібліотеки, такі як GSAP, для створення
-						анімацій та покращення користувацького досвіду.Маю базове розуміння
-						принципів роботи веб-сайтів та бажання розвиватися в цій галузі. Я
-						дуже мотивований та швидко навчаюсь, готовий вкладати час і зусилля
-						для досягнення своїх цілей у фронтенд розробці.`,
+		title: translate("messages[1]['title']"),
+		content: translate("messages[1]['content']"),
 	},
-	{ title: 'You', content: 'Ok' },
-	{ title: 'You', content: 'Ok' },
-	{ title: 'You', content: 'Ok' },
-	{ title: 'You', content: 'Ok' },
+	{
+		title: translate("messages[2]['title']"),
+		content: translate("messages[2]['content']"),
+	},
+	{
+		title: translate("messages[3]['title']"),
+		content: translate("messages[3]['content']"),
+	},
+
+	{
+		title: translate("messages[5]['title']"),
+		content: translate("messages[5]['content']"),
+	},
+	{
+		title: translate("messages[6]['title']"),
+		content: translate("messages[6]['content']"),
+	},
+	{
+		title: translate("messages[7]['title']"),
+		content: translate("messages[7]['content']"),
+	},
 ]
 
-defineProps({
-	message: Array,
-})
+console.log(message)
 </script>
 
 <template>
 	<section class="about">
 		<div class="about__border">
 			<div class="about__message message">
+				<h3>{{ message['title'] }}</h3>
 				<div
-					v-for="(block, index) in message || defaulMessage"
+					v-for="(block, index) in message"
 					:key="index"
 					:class="index % 2 === 0 ? 'message__you' : 'message__me'"
 					:style="{ 'animation-delay': `${index * 5 + 2}s` }"

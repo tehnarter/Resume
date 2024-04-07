@@ -13,10 +13,6 @@ const formData = ref({
 })
 
 defineProps({
-	send: String,
-	emailPlaceholder: String,
-	namePlaceholder: String,
-	messagePlaceholder: String,
 	statusSend: Object,
 })
 const status = ref('')
@@ -108,7 +104,7 @@ const handleSubmit = async statusSend => {
 						name="name"
 						type="text"
 						autocomplete="on"
-						:placeholder="namePlaceholder"
+						:placeholder="$t('contacts.name')"
 						v-model="formData.name"
 						required
 					/>
@@ -117,7 +113,7 @@ const handleSubmit = async statusSend => {
 						name="email"
 						type="email"
 						autocomplete="on"
-						:placeholder="emailPlaceholder"
+						:placeholder="$t('contacts.email')"
 						v-model="formData.email"
 						required
 					/>
@@ -125,7 +121,7 @@ const handleSubmit = async statusSend => {
 						class="contacts__text"
 						type="text"
 						name="message"
-						:placeholder="messagePlaceholder"
+						:placeholder="$t('contacts.text')"
 						maxlength="500"
 						v-model="formData.message"
 						required
@@ -137,7 +133,7 @@ const handleSubmit = async statusSend => {
 						@click="handleSubmit(statusSend)"
 						:disabled="isFormSubmitted"
 					>
-						{{ send }}
+						{{ $t('contacts.send') }}
 					</button>
 				</form>
 			</div>
