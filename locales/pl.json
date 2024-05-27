@@ -48,5 +48,21 @@
 		"field": "Proszę wypełnić wszystkie pola"
 	},
 	"footer-title": "Portfolio ™ & © 2024",
-	"footer-polisy": "Polityka prywatności"
+	"footer-policy": "Polityka prywatności",
+	"logo-tooltip": "Pobierz CV",
+	"policy": {
+		"title-1": "Polityka prywatności",
+		"title-2": "Zbieranie i wykorzystywanie informacji",
+		"title-3": "Ujawnianie informacji osobom trzecim",
+		"title-4": "Ochrona danych",
+		"title-5": "Zmiany w Polityce prywatności",
+		"title-6": "Dane kontaktowe",
+		"text-1": "Niniejsza Polityka prywatności dotyczy wizyty na naszej stronie internetowej https://resume-cv.pp.ua/. Nie zbieramy, nie używamy ani nie ujawniamy żadnych danych osobowych o Tobie podczas Twojej obecności na naszej stronie.",
+		"text-2": "Nie zbieramy żadnych danych osobowych o Tobie.",
+		"text-3": "Ponieważ nie zbieramy danych osobowych o Tobie, nie ujawniamy ich osobom trzecim.",
+		"text-4": "Choć nie zbieramy danych osobowych o Tobie, wciąż stosujemy środki bezpieczeństwa w celu ochrony Twojej prywatności podczas korzystania z naszej witryny.",
+		"text-5": "Niniejsza polityka prywatności została ostatnio zaktualizowana 01.03.2024 r. Możemy okresowo aktualizować tę politykę prywatności, a nowa edycja Polityki prywatności staje się skuteczna po jej opublikowaniu w Internecie pod adresem określonym w tej sekcji, chyba że nowa edycja Polityki prywatności stanowi inaczej. Obecna wersja Polityki prywatności jest zawsze dostępna pod adresem https://resume-cv.pp.ua/. Jeśli istnieją jakiekolwiek zmiany w Polityce prywatności, z którymi Użytkownik się nie zgadza, musi zaprzestać korzystania ze Strony. Kontynuowane korzystanie ze Strony stanowi akceptację i uznanie przez Użytkownika odpowiedniej edycji Polityki prywatności.",
+		"text-6": "Jeśli masz jakiekolwiek pytania lub wątpliwości dotyczące tej Polityki, skontaktuj się z nami pod adresem https://resume-cv.pp.ua/. Niniejsza Polityka prywatności została opracowana zgodnie z wymogami ukraińskiego prawa dotyczącego ochrony danych osobowych oraz innymi odpowiednimi aktami prawnymi regulującymi.",
+		"button": "POTWIERDZAM"
+	}
 }

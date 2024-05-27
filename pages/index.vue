@@ -12,7 +12,13 @@ const statusSend = {
 	field: translate('contacts.field'),
 }
 
-// console.log(menu[0].name)
+const isClickedPolicy = ref(false)
+const addClassPolicy = () => {
+	isClickedPolicy.value = true
+}
+const removeClassPolicy = () => {
+	isClickedPolicy.value = false
+}
 </script>
 
 <template>
@@ -35,7 +41,11 @@ const statusSend = {
 				</div>
 			</Transition>
 		</main>
-		<Footer />
+		<Policy
+			:class="{ open: isClickedPolicy }"
+			@closePolicyClick="removeClassPolicy"
+		/>
+		<Footer @openPolicyClick="addClassPolicy" />
 	</div>
 </template>
 <style>

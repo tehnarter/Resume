@@ -58,7 +58,7 @@ const closeBurger = () => {
 	<header class="header">
 		<div class="header__container">
 			<div class="header__menu">
-				<div class="logo">
+				<div class="logo" :data-tooltip="$t('logo-tooltip')">
 					<img src="/resume.svg" alt="logo" />
 				</div>
 				<Burger :class="{ active: isClickedBurger }" @click="activeBurger" />

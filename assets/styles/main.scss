@@ -10,8 +10,39 @@
 	column-gap: 5px;
 }
 .logo {
-	cursor: pointer;
 	flex-grow: 1;
+	& img {
+		cursor: pointer;
+	}
+}
+[data-tooltip] {
+	position: relative;
+}
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: 80%;
+	transform: translateX(-50%);
+	background-color: #7188a2;
+	padding: 10px 10px;
+	text-align: center;
+	border-radius: 10px;
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 300ms ease-in-out;
+	@include adaptiveMax(xs) {
+		padding: 0;
+		left: 140px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 12px;
+	}
+}
+[data-tooltip]:hover:after {
+	z-index: 100;
+	opacity: 1;
+	visibility: visible;
 }
 .nav {
 	@include adaptiveMax(xs) {
@@ -234,7 +265,7 @@
 	display: flex;
 	justify-content: space-between;
 }
-.footer__polisy {
+.footer__policy {
 	cursor: pointer;
 	&:hover {
 		border-bottom: solid 1px;

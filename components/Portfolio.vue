@@ -3,40 +3,46 @@ import { ref } from 'vue'
 const slides = [
 	{
 		id: 1,
-		imageSrc: '/food.jpg',
-		description: 'VUE3  SCSS G-SAP VITE',
+		imageSrc: '/tech.jpg',
+		description: ' NUXT3 VUE3  SCSS G-SAP VITE',
 		path: 'https://project-1.resume-cv.pp.ua',
 	},
 	{
 		id: 2,
-		imageSrc: '/polar.jpg',
-		description: 'GULP SCSS JS WORDPRESS PHP',
+		imageSrc: '/food.jpg',
+		description: 'VUE3  SCSS G-SAP VITE',
 		path: 'https://project-2.resume-cv.pp.ua',
 	},
 	{
 		id: 3,
+		imageSrc: '/polar.jpg',
+		description: 'GULP SCSS JS WORDPRESS PHP',
+		path: 'https://project-3.resume-cv.pp.ua',
+	},
+	{
+		id: 4,
 		imageSrc: '/travel.jpg',
 		description: 'GULP SCSS JS ',
-		path: 'https://project-3.resume-cv.pp.ua',
+		path: 'https://project-4.resume-cv.pp.ua',
 	},
 
 	{
-		id: 4,
+		id: 5,
 		imageSrc: '/car.jpg',
 		description: 'GULP SCSS JS',
-		path: 'https://project-4.resume-cv.pp.ua',
-	},
-	{
-		id: 5,
-		imageSrc: '/cafe.jpg',
-		description: 'HTML CSS JS ',
 		path: 'https://project-5.resume-cv.pp.ua',
 	},
 	{
 		id: 6,
+		imageSrc: '/cafe.jpg',
+		description: 'HTML CSS JS ',
+		path: 'https://project-6.resume-cv.pp.ua',
+	},
+	{
+		id: 7,
 		imageSrc: '/rest.jpg',
 		description: 'HTML CSS',
-		path: 'https://project-6.resume-cv.pp.ua',
+		path: 'https://project-7.resume-cv.pp.ua',
 	},
 ]
 const currentSlideDescription = ref(slides[0].description)

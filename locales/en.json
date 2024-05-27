@@ -48,5 +48,21 @@
 		"field": "Please fill in all fields"
 	},
 	"footer-title": "Portfolio ™ & © 2024",
-	"footer-polisy": "Privacy policy"
+	"footer-policy": "Privacy policy",
+	"logo-tooltip": "Download resume",
+	"policy": {
+		"title-1": "Privacy Policy",
+		"title-2": "Collection and Use of Information",
+		"title-3": "Disclosure to Third Parties",
+		"title-4": "Data Protection",
+		"title-5": "Changes to the Privacy Policy",
+		"title-6": "Contact Information",
+		"text-1": "This Privacy Policy applies to your visit to our website https://resume-cv.pp.ua/. We do not collect, use, or disclose any personal information about you during your time on our site.",
+		"text-2": "We do not collect any personal information about you.",
+		"text-3": "Since we do not collect personal information about you, we do not disclose it to third parties.",
+		"text-4": "Although we do not collect personal information about you, we still apply security measures to protect your privacy while using our website.",
+		"text-5": "This privacy policy was last updated on 01.03.2024. We may periodically update this privacy policy, and the new edition of the Privacy Policy becomes effective upon its posting on the Internet at the address specified in this section, unless otherwise provided by the new edition of the Privacy Policy. The current version of the Privacy Policy is always available at the address https://resume-cv.pp.ua/. If there are any changes to the Privacy Policy with which the User disagrees, they must cease using the Site. The continued use of the Site constitutes acceptance and acknowledgment by the User of the respective edition of the Privacy Policy.",
+		"text-6": "If you have any questions or concerns regarding this Policy, please contact us at https://resume-cv.pp.ua/. This Privacy Policy is developed in accordance with the requirements of Ukrainian legislation on the protection of personal data and other relevant regulatory legal acts.",
+		"button": "CONFIRM"
+	}
 }
